@@ -1,0 +1,12 @@
+sources:
+  include:
+  - ../PocketNetworking
+templates:
+- /Users/andremartingo/Development/pocketnetworking/.mocky/.template.swifttemplate
+output: /Users/andremartingo/Development/pocketnetworking/.mocky/types.yaml
+args:
+  swiftyMocky:
+    import:
+    - Foundation
+    testable:
+    - PocketNetworking
