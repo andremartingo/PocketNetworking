@@ -11,7 +11,7 @@ class NetworkLayer: NetworkLayerProtocol {
         self.session = session
     }
     
-    func request(resource: Resource) async -> Result<HTTP.Response, NetworkingError> {
+    func request(resource: Resource) async -> Result<(HTTP.Response), NetworkingError> {
         if #available(iOSApplicationExtension 15.0, *) {
             do {
                 let request = resource.request()

@@ -11,4 +11,3 @@ extension HTTPURLResponse {
         return .init(url: .init(string: "https://api.coindesk.com")!, statusCode: statusCode, httpVersion: nil, headerFields: nil)
     }
 }
-
