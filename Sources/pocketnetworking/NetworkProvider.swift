@@ -41,13 +41,7 @@ class NetworkProvider: NetworkProviderProtocol {
     }
     
     private func requestRaw<T: EndpointProtocol>(endpoint: T) async -> Result<Data?, NetworkingError> {
-        let resource = Resource(baseURL: endpoint.baseURL,
-                                path: endpoint.path,
-                                method: endpoint.method,
-                                body: nil,
-                                headers: endpoint.headers,
-                                query: endpoint.query)
-        let result = await networkLayer.request(resource: resource)
+        let result = await networkLayer.request(with: endpoint.makeRequest())
         switch result {
         case .success(let response):
             guard let httpURLResponse = response.httpURLResponse, 200..<300 ~= httpURLResponse.statusCode else {

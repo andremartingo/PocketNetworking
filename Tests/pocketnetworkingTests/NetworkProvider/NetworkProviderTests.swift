@@ -39,13 +39,13 @@ final class NetworkProviderTests: XCTestCase {
         let endpoint = EmptyResponseEndpoint()
         networkLayerMock.mockRequest = .success(.init(urlRequest: .mock(), data: nil, httpURLResponse: .mock()))
         guard case .success = await sut.request(endpoint: endpoint) else { return XCTFail() }
-        guard let resource = networkLayerMock.resource else { return XCTFail() }
-        XCTAssertEqual(resource.baseURL.absoluteString, endpoint.baseURL.absoluteString)
-        XCTAssertEqual(resource.path, endpoint.path)
-        XCTAssertEqual(resource.headers, [:])
-        XCTAssertEqual(resource.query, [:])
-        XCTAssertEqual(resource.method, .get)
-        XCTAssertEqual(resource.body, nil)
+        guard let request = networkLayerMock.request else { return XCTFail() }
+        XCTAssertEqual(request.url?.host, endpoint.baseURL.host)
+        XCTAssertEqual(request.url?.path, endpoint.path)
+        XCTAssertEqual(request.allHTTPHeaderFields, [:])
+        XCTAssertEqual(request.url?.query, nil)
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertEqual(request.httpBody, nil)
     }
     
     func test_requestWithDecodable() async {

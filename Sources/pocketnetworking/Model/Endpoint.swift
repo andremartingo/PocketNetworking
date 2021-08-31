@@ -27,3 +27,29 @@ extension EndpointProtocol {
         return JSONDecoder()
     }
 }
+
+extension EndpointProtocol {
+    func makeRequest() -> URLRequest {
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)
+        
+        components?.queryItems = queryItems(from: query)
+        components?.path = path
+        
+        
+        let request = NSMutableURLRequest(url: components?.url ?? baseURL)
+        
+        request.allHTTPHeaderFields = headers
+        request.httpMethod = method.rawValue
+        
+        
+        return request as URLRequest
+    }
+    
+    private func queryItems(from query: HTTP.Query) -> [URLQueryItem]? {
+        
+        guard query.isEmpty == false else { return nil }
+        
+        return query.map { (key, value) in URLQueryItem(name: key, value: value) }
+    }
+}
+

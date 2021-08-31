@@ -1,8 +1,5 @@
-//
-//  File.swift
-//  File
-//
-//  Created by Andre Martingo on 20.08.21.
-//
+import XCTest
+@testable import pocketnetworking
 
-import Foundation
+final class EndpointTests: XCTestCase {
+}

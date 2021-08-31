@@ -11,10 +11,10 @@ import Foundation
 class NetworkLayerMock: NetworkLayerProtocol {
     var mockRequest: Result<HTTP.Response, NetworkingError> = .success(.init(urlRequest: URLRequest(url: URL(string: "www.apple.com")!), data: nil, httpURLResponse: nil))
     
-    var resource: Resource?
+    var request: URLRequest?
     
-    func request(resource: Resource) async -> Result<HTTP.Response, NetworkingError> {
-        self.resource = resource
+    func request(with request: URLRequest) async -> Result<HTTP.Response, NetworkingError> {
+        self.request = request
         return mockRequest
     }
 }
