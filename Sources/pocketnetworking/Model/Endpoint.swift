@@ -1,10 +1,10 @@
 import Foundation
 
-protocol BaseEndpointProtocol {
+public protocol BaseEndpointProtocol {
     var baseURL: URL { get }
 }
 
-protocol EndpointProtocol: BaseEndpointProtocol {
+public protocol EndpointProtocol: BaseEndpointProtocol {
     var path: String { get }
     var method: HTTP.Method { get }
     var query: HTTP.Query { get }
@@ -14,7 +14,7 @@ protocol EndpointProtocol: BaseEndpointProtocol {
     associatedtype Response: Decodable
 }
 
-extension EndpointProtocol {
+public extension EndpointProtocol {
     var headers: [AnyHashable: String] {
         return [:]
     }

@@ -1,6 +1,6 @@
 import Foundation
 
-enum NetworkingError: Swift.Error {
+public enum NetworkingError: Swift.Error {
     case none
     case noData
     case statusCode(HTTP.Response)
@@ -8,18 +8,22 @@ enum NetworkingError: Swift.Error {
     case underlying(Swift.Error, HTTP.Response?)
 }
 
-protocol NetworkProviderProtocol {
+public protocol NetworkProviderProtocol {
     func request<T: EndpointProtocol>(endpoint: T) async -> Result<T.Response, NetworkingError>
 }
 
-class NetworkProvider: NetworkProviderProtocol {
+public class NetworkProvider: NetworkProviderProtocol {
     private let networkLayer: NetworkLayerProtocol
     
-    init(networkLayer: NetworkLayerProtocol) {
+    public init() {
+        self.networkLayer = NetworkLayer()
+    }
+    
+    internal init(networkLayer: NetworkLayerProtocol = NetworkLayer()) {
         self.networkLayer = networkLayer
     }
     
-    func request<T: EndpointProtocol>(endpoint: T) async -> Result<T.Response, NetworkingError> {
+    public func request<T: EndpointProtocol>(endpoint: T) async -> Result<T.Response, NetworkingError> {
         let response = await requestRaw(endpoint: endpoint)
         switch response {
         case .success(let data):
@@ -35,6 +39,7 @@ class NetworkProvider: NetworkProviderProtocol {
                     return .failure(.decoding(error))
                 }
             }
+            
         case .failure(let error):
             return .failure(error)
         }

@@ -1,12 +1,12 @@
 import Foundation
 
-struct HTTP {
+public struct HTTP {
     
-    typealias Headers = [String: String]
+    public typealias Headers = [String: String]
     
-    typealias Query = [String: String]
+    public typealias Query = [String: String]
     
-    enum Method: String {
+    public enum Method: String {
         
         case get = "GET"
         case head = "HEAD"
@@ -19,10 +19,10 @@ struct HTTP {
         case trace = "TRACE"
     }
     
-    struct Response {
-        let urlRequest: URLRequest
-        let data: Data?
-        let httpURLResponse: HTTPURLResponse?
+    public struct Response {
+        public let urlRequest: URLRequest
+        public let data: Data?
+        public let httpURLResponse: HTTPURLResponse?
         
         public var description: String {
             return """
