@@ -18,6 +18,7 @@
 		30AF8C3826DFF8330035E7DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF8C3726DFF8330035E7DC /* HomeView.swift */; };
 		30AF8C3C26DFF8470035E7DC /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF8C3B26DFF8470035E7DC /* HomeStore.swift */; };
 		30AF8C3E26DFFBA00035E7DC /* CoinbaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF8C3D26DFFBA00035E7DC /* CoinbaseService.swift */; };
+		30BE740826EBB6F800E76AE2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE740726EBB6F800E76AE2 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		30AF8C3726DFF8330035E7DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		30AF8C3B26DFF8470035E7DC /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 		30AF8C3D26DFFBA00035E7DC /* CoinbaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseService.swift; sourceTree = "<group>"; };
+		30BE740726EBB6F800E76AE2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				30AF8C3B26DFF8470035E7DC /* HomeStore.swift */,
 				30AF8C3D26DFFBA00035E7DC /* CoinbaseService.swift */,
 				304B50B626E14D2F001A749F /* CurrentPriceEndpoint.swift */,
+				30BE740726EBB6F800E76AE2 /* CardView.swift */,
 			);
 			path = PocketNetworking;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BE740826EBB6F800E76AE2 /* CardView.swift in Sources */,
 				304B50B726E14D2F001A749F /* CurrentPriceEndpoint.swift in Sources */,
 				30AF8C3826DFF8330035E7DC /* HomeView.swift in Sources */,
 				30AF8C3C26DFF8470035E7DC /* HomeStore.swift in Sources */,

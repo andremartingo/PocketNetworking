@@ -12,7 +12,13 @@ struct HomeView: View {
     var store: HomeStore
     
     var body: some View {
-        Text(store.state.price)
+        CardView(image: store.state.image,
+                 title: store.state.title,
+                 subtitle: store.state.subtitle,
+                 price1: store.state.price1,
+                 price2: store.state.price2,
+                 price3: store.state.price3,
+                 isLoading: store.state.isLoading)
             .onAppear(perform: { store.send(action: .onAppear) })
     }
 }
