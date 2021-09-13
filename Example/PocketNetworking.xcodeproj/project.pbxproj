@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3049BF3D26C9D562001E2EF1 /* PocketNetworkingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049BF3C26C9D562001E2EF1 /* PocketNetworkingApp.swift */; };
-		3049BF3F26C9D562001E2EF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049BF3E26C9D562001E2EF1 /* ContentView.swift */; };
 		3049BF4126C9D564001E2EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3049BF4026C9D564001E2EF1 /* Assets.xcassets */; };
 		3049BF4426C9D564001E2EF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3049BF4326C9D564001E2EF1 /* Preview Assets.xcassets */; };
 		3049BF4E26C9D564001E2EF1 /* PocketNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049BF4D26C9D564001E2EF1 /* PocketNetworkingTests.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		3049BF3926C9D562001E2EF1 /* PocketNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3049BF3C26C9D562001E2EF1 /* PocketNetworkingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketNetworkingApp.swift; sourceTree = "<group>"; };
-		3049BF3E26C9D562001E2EF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3049BF4026C9D564001E2EF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3049BF4326C9D564001E2EF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3049BF4926C9D564001E2EF1 /* PocketNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,15 +101,12 @@
 		3049BF3B26C9D562001E2EF1 /* PocketNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				30CB821826EFE9D000E02EC5 /* Network */,
+				30CB821726EFE9C900E02EC5 /* Store */,
+				30CB821626EFE9BB00E02EC5 /* View */,
 				3049BF3C26C9D562001E2EF1 /* PocketNetworkingApp.swift */,
-				3049BF3E26C9D562001E2EF1 /* ContentView.swift */,
 				3049BF4026C9D564001E2EF1 /* Assets.xcassets */,
 				3049BF4226C9D564001E2EF1 /* Preview Content */,
-				30AF8C3726DFF8330035E7DC /* HomeView.swift */,
-				30AF8C3B26DFF8470035E7DC /* HomeStore.swift */,
-				30AF8C3D26DFFBA00035E7DC /* CoinbaseService.swift */,
-				304B50B626E14D2F001A749F /* CurrentPriceEndpoint.swift */,
-				30BE740726EBB6F800E76AE2 /* CardView.swift */,
 			);
 			path = PocketNetworking;
 			sourceTree = "<group>";
@@ -144,6 +139,32 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30CB821626EFE9BB00E02EC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30AF8C3726DFF8330035E7DC /* HomeView.swift */,
+				30BE740726EBB6F800E76AE2 /* CardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30CB821726EFE9C900E02EC5 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				30AF8C3B26DFF8470035E7DC /* HomeStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		30CB821826EFE9D000E02EC5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				304B50B626E14D2F001A749F /* CurrentPriceEndpoint.swift */,
+				30AF8C3D26DFFBA00035E7DC /* CoinbaseService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +305,6 @@
 				30AF8C3826DFF8330035E7DC /* HomeView.swift in Sources */,
 				30AF8C3C26DFF8470035E7DC /* HomeStore.swift in Sources */,
 				30AF8C3E26DFFBA00035E7DC /* CoinbaseService.swift in Sources */,
-				3049BF3F26C9D562001E2EF1 /* ContentView.swift in Sources */,
 				3049BF3D26C9D562001E2EF1 /* PocketNetworkingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
