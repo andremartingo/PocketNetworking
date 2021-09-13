@@ -12,7 +12,6 @@
 		3049BF4126C9D564001E2EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3049BF4026C9D564001E2EF1 /* Assets.xcassets */; };
 		3049BF4426C9D564001E2EF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3049BF4326C9D564001E2EF1 /* Preview Assets.xcassets */; };
 		3049BF4E26C9D564001E2EF1 /* PocketNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049BF4D26C9D564001E2EF1 /* PocketNetworkingTests.swift */; };
-		3049BF5826C9D564001E2EF1 /* PocketNetworkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049BF5726C9D564001E2EF1 /* PocketNetworkingUITests.swift */; };
 		3049BF6626C9D58B001E2EF1 /* pocketnetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 3049BF6526C9D58B001E2EF1 /* pocketnetworking */; };
 		304B50B726E14D2F001A749F /* CurrentPriceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B50B626E14D2F001A749F /* CurrentPriceEndpoint.swift */; };
 		30AF8C3826DFF8330035E7DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF8C3726DFF8330035E7DC /* HomeView.swift */; };
@@ -47,7 +46,6 @@
 		3049BF4926C9D564001E2EF1 /* PocketNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3049BF4D26C9D564001E2EF1 /* PocketNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketNetworkingTests.swift; sourceTree = "<group>"; };
 		3049BF5326C9D564001E2EF1 /* PocketNetworkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketNetworkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3049BF5726C9D564001E2EF1 /* PocketNetworkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketNetworkingUITests.swift; sourceTree = "<group>"; };
 		304B50B626E14D2F001A749F /* CurrentPriceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceEndpoint.swift; sourceTree = "<group>"; };
 		30AF8C3726DFF8330035E7DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		30AF8C3B26DFF8470035E7DC /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 		3049BF5626C9D564001E2EF1 /* PocketNetworkingUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3049BF5726C9D564001E2EF1 /* PocketNetworkingUITests.swift */,
 			);
 			path = PocketNetworkingUITests;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3049BF5826C9D564001E2EF1 /* PocketNetworkingUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
