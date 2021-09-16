@@ -73,4 +73,26 @@ final class NetworkProviderTests: XCTestCase {
         guard case .failure(let error) = await sut.request(endpoint: endpoint) else { return XCTFail() }
         guard case .decoding = error else { return XCTFail() }
     }
+    
+    func test_requestWithBearerAuthorization() async {
+        let token = "randomtoken"
+        let endpoint = BearerEndpoint(token: token)
+        networkLayerMock.mockRequest = .success(.init(urlRequest: .mock(), data: validCurrentPriceResponse, httpURLResponse: .mock()))
+        guard case .success = await sut.request(endpoint: endpoint) else { return XCTFail() }
+        guard let request = networkLayerMock.request else { return XCTFail() }
+        XCTAssertEqual(request.allHTTPHeaderFields, ["Authorization": "bearer \(token)"])
+    }
+    
+    func test_requestWithBasicAuthorization() async {
+        let username = "apple"
+        let password = "park"
+        let endpoint = BasicEndpoint(username: username, password: password)
+        networkLayerMock.mockRequest = .success(.init(urlRequest: .mock(), data: validCurrentPriceResponse, httpURLResponse: .mock()))
+        
+        guard case .success = await sut.request(endpoint: endpoint) else { return XCTFail() }
+        guard let request = networkLayerMock.request else { return XCTFail() }
+        
+        let expected = "Basic " + "\(username):\(password)".data(using: .utf8)!.base64EncodedString()
+        XCTAssertEqual(request.allHTTPHeaderFields, ["Authorization": expected])
+    }
 }

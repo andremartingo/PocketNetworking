@@ -48,5 +48,5 @@ class CurrentPriceEndpoint: EndpointProtocol {
     let method = HTTP.Method.get
     let query: HTTP.Query = [:]
     let headers: HTTP.Headers = [:]
+    let authorizationMethod: AuthorizationMethod = .none
 }
-

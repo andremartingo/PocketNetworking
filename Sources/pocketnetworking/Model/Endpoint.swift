@@ -18,11 +18,7 @@ public extension EndpointProtocol {
     var headers: [AnyHashable: String] {
         return [:]
     }
-
-    var authorizationMethod: AuthorizationMethod {
-        return .none
-    }
-    
+        
     var decoder: ResponseDecoder {
         return JSONDecoder()
     }
@@ -41,8 +37,26 @@ extension EndpointProtocol {
         request.allHTTPHeaderFields = headers
         request.httpMethod = method.rawValue
         
+        if let authorization = makeAuthorizationHeader() {
+            request.setValue(authorization, forHTTPHeaderField: "Authorization")
+        }
         
         return request as URLRequest
+    }
+    
+    private func makeAuthorizationHeader() -> String? {
+        switch authorizationMethod {
+        case .bearer(let token):
+            return "bearer " + token
+
+        case .basic(let username, let password):
+            let value = username + ":" + password
+            guard let data = value.data(using: .utf8)?.base64EncodedString() else { return nil }
+            return "Basic " + data
+
+        case .none:
+            return nil
+        }
     }
     
     private func queryItems(from query: HTTP.Query) -> [URLQueryItem]? {
