@@ -10,6 +10,7 @@ public enum NetworkingError: Swift.Error {
 
 public protocol NetworkProviderProtocol {
     func request<T: EndpointProtocol>(endpoint: T) async -> Result<T.Response, NetworkingError>
+    func requestRaw<T: EndpointProtocol>(endpoint: T) async -> Result<Data?, NetworkingError>
 }
 
 public class NetworkProvider: NetworkProviderProtocol {
@@ -45,7 +46,7 @@ public class NetworkProvider: NetworkProviderProtocol {
         }
     }
     
-    private func requestRaw<T: EndpointProtocol>(endpoint: T) async -> Result<Data?, NetworkingError> {
+    public func requestRaw<T: EndpointProtocol>(endpoint: T) async -> Result<Data?, NetworkingError> {
         let result = await networkLayer.request(with: endpoint.makeRequest())
         switch result {
         case .success(let response):
