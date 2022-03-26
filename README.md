@@ -20,7 +20,7 @@
 
 **Pocket Networking** doesn't claim to be unique in this area, but it's not another monster
 library that gives you a god's power. It does nothing but networking, but it does it well. It offers a good public API
-with out-of-box implementations and great customization possibilities. `PocketNetworking` utilizes `Async/Awaut` in Swift 5.
+with out-of-box implementations and great customization possibilities. `PocketNetworking` utilizes `Async/Await` in Swift 5.
 
 ## 🏃‍♀️ Getting started
 Create a `struct` conforming to `EndpointProtocol` with all of your API resources like the following: 
