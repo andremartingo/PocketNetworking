@@ -7,6 +7,7 @@ public protocol BaseEndpointProtocol {
 public protocol EndpointProtocol: BaseEndpointProtocol {
     var path: String { get }
     var method: HTTP.Method { get }
+    var body: Data? { get }
     var query: HTTP.Query { get }
     var headers: HTTP.Headers { get }
     var authorizationMethod: AuthorizationMethod { get }
@@ -17,6 +18,10 @@ public protocol EndpointProtocol: BaseEndpointProtocol {
 public extension EndpointProtocol {
     var headers: [AnyHashable: String] {
         return [:]
+    }
+    
+    var body: Data? {
+        return nil
     }
         
     var decoder: ResponseDecoder {
@@ -36,6 +41,7 @@ extension EndpointProtocol {
         
         request.allHTTPHeaderFields = headers
         request.httpMethod = method.rawValue
+        request.httpBody = body
         
         if let authorization = makeAuthorizationHeader() {
             request.setValue(authorization, forHTTPHeaderField: "Authorization")
